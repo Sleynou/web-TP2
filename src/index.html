@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<!-- le charset doit toujours être le premier élément du head -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Entreprise</title>
+        <meta name="description" content="description du site">
+		<!-- ce site est disponible sur https://tp2.breton.pm mais on ne souhaite pas l'indexer -->
+		<meta name="robots" content="noindex,nofollow">
+		<!-- Reseter est une feuille de style de réinitialisation similaire à Normalize -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reseter.css/2.0.0/reseter.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="icon" sizes="64x64" href="images/logo64x64.png">
+        <!-- on pré-charge l'entièreté des pages du site: -->
+        <link rel="preload" href="pages/accueil.html" as="fetch" type="text/html">
+        <link rel="preload" href="pages/services.html" as="fetch" type="text/html">
+        <link rel="preload" href="pages/forfaits.html" as="fetch" type="text/html">
+        <link rel="preload" href="pages/actualites.html" as="fetch" type="text/html">
+        <link rel="preload" href="pages/contact.html" as="fetch" type="text/html">
+        <!-- on demande au navigateur de charger le module principal après le chargement de la page: -->
+        <script async src="js/module.js" type="module"></script>
+	</head>
+	<body>
+		<header>
+			<div class="marge">
+                <div>
+					<picture>
+						<img srcset="images/logo256.png 2x" src="images/logo256.png" alt="Logo du site"/>
+					</picture>
+
+					<!-- le tout premier <h1> est toujours interprété par les lecteurs d'écran comme étant le titre de la page -->
+					<h1>Entreprise</h1>
+                </div>
+
+                <nav>
+                    <!-- la balise <menu> agit comme un <ul> mais apporte plus de contexte pour les lecteurs d'écran -->
+                    <menu role="list">
+                        <li><a href="#/">Accueil</a></li>
+                        <li><a href="#/services">Services</a></li>
+                        <li><a href="#/forfaits">Forfaits</a></li>
+                        <li><a href="#/actualites">Actualités</a></li>
+                        <li><a href="#/contact">Contact</a></li>
+                    </menu>
+                </nav>
+			</div>
+		</header>
+		<main>
+            <!-- ce contenu dynamique est chargé et géré par le module javascript -->
+            <!-- on utilise, tout de même, un contenu temporaire pendant le chargement initial: -->
+            <header>
+                <div class="marge">
+                    <h1 role="status">Chargement...</h1>
+                </div>
+            </header>
+            <div class="marge">
+                <p role="status">Veuillez patienter</p>
+			</div>
+            <!-- le vrai contenu des pages se trouve dans le dossier pages/ -->
+		</main>
+		<footer>
+			<div class="marge">
+                Copyright &copy; 2022 &mdash; Entreprise Sans Nom, Inc.
+			</div>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,109 @@
+:root {
+    /** représente la balise <html> */
+
+    /** on désire un défilement fluide */
+	scroll-behavior: smooth;
+}
+
+div.marge {
+	/** classe utilisée pour créer une marge */
+	width: 80%;
+	max-width: 1200px;
+	margin: 0 auto;
+    contain: paint;
+    border: solid 1px red; /* NOTE: couleur et bordure temporaire */
+}
+
+
+
+/* =================================================================
+*  ================= Bandeau d'en-tête du site =====================
+*  ================================================================= */
+
+body > header {
+    /** contient l'arrière-plan du bandeau */
+    background: beige; /* NOTE: couleur temporaire */
+}
+
+body > header > div {
+    /** conteneur principal de l'en-tête */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body > header > div > div {
+    /** le conteneur de la portion logo et nom d'entreprise */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+body > header picture img {
+    /** le logo de l'entreprise */
+    width: 48px;
+    height: 48px;
+}
+
+body > header menu {
+    /** le menu de navigation */
+    display: flex;
+    gap: 2vw;
+}
+
+body > header menu li {
+    /** un élément du menu de navigation */
+    display: inline-block;
+}
+
+body > header menu li.active {
+    /** l'élément du menu qui représente la page présentement active */
+    background: cyan; /* NOTE: couleur temporaire */
+}
+
+body > header menu a {
+    /** un lien du menu */
+    text-decoration: none;
+}
+
+
+
+/* =================================================================
+*  ================= Contenu principal du site =====================
+*  ================================================================= */
+
+body > main {
+    /** conteneur principal du corps de la page */
+    background: lightgreen; /* NOTE: couleur temporaire */
+}
+
+body > main > header {
+    /** l'en-tête du corps de la page */
+    background: lightpink; /* NOTE: couleur temporaire */
+}
+
+body > main > div {
+    /** conteneur du contenu de la page */
+    background: lightgrey; /* NOTE: couleur temporaire */
+}
+
+
+
+/* =================================================================
+*  ==================== Pied de page du site =======================
+*  ================================================================= */
+
+body > footer {
+    display: block;
+}
+
+
+
+/* =================================================================
+*  ===================== Styles utilitaires ========================
+*  ================================================================= */
+
+body.chargement > main > div, body.chargement > main > header > div {
+    /** on rend la page translucide lors du chargement d'une autre page */
+    opacity: .6;
+}
