@@ -1,6 +1,7 @@
 /**
  * @file Ce module contrôle la navigation intéractive du site
  * @author Pascal Breton Beauchamp
+ * @license 0BSD Zero Clause BSD License
  */
 
 // on définit un type JSDoc pour les identifiants de page:
@@ -35,7 +36,7 @@ class Site {
      * @returns {string} le titre de la page actuelle
      */
     get titreDePage () {
-        return document.querySelector("main h1:first-of-type");
+        return document.querySelector("main > header h1:first-of-type");
     }
 
     /**
@@ -53,7 +54,7 @@ class Site {
      * @returns {HTMLDivElement} la balise du corps de page
      */
     get contenuPrincipal () {
-        return document.querySelector("main > div:first-of-type");
+        return document.querySelector("main > .corps");
     }
 
     /**
@@ -81,7 +82,7 @@ class Site {
      */
     get pageActuelle () {
         const fragmentAdresse = document.location.hash // on obtient le fragment d'adresse
-            .trim().toLowerCase().split("#/")[1]?.replaceAll(/[^a-z_-]/g, ""); // on le nettoie
+            .trim().toLowerCase().split("/")[1]?.replaceAll(/[^a-z-]/g, ""); // on le nettoie
         return fragmentAdresse === "" ? pageParDefaut : fragmentAdresse;
     }
 
@@ -106,7 +107,7 @@ class Site {
      * @param {IdentifiantPage} pageDemandee - l'identifiant de la nouvelle page active
      */
     set pageMenuActive (pageDemandee) {
-        for (const lien of document.querySelectorAll("nav menu li")) {
+        for (const lien of document.querySelectorAll("nav > .menu > li")) {
             const destination = lien.querySelector("a").href.split("#/")[1] || pageParDefaut;
 
             if (destination == pageDemandee) {
@@ -127,18 +128,28 @@ class Site {
         /** la page vers laquelle on désire aller  */
         const pageDemandee = (/** @type {IdentifiantPage} */ this.pageActuelle || pageParDefaut);
 
-        // on commence par indiquer à l'utilisateur que la nouvelle page est en cours de chargement:
-        document.body.classList.add("chargement");
-
         // ensuite, on charge la nouvelle page:
         fetch(`pages/${pageDemandee}.html`)
         .then(reponse => reponse.text())
         .then(texte => domParser.parseFromString(texte, "text/html"))
         .then(html => {
             // on analyse notre nouvelle page:
-            const titreDePage = html.querySelector("h1:first-of-type");
-            const description = html.querySelector("details:first-of-type").innerText;
-            const corpsDePage = html.querySelector("main:first-of-type");
+            const titreDePage = html.querySelector("h1");
+            const description = html.querySelector("meta-description").innerText.trim();
+            const corpsDePage = html.querySelector("main");
+            const styleDePage = html.querySelector("style");
+
+            // si la page comporte un style css spécifique, on vient l'intégrer:
+            if (styleDePage && !document.head.querySelector(`style[data-page=${pageDemandee}]`)) {
+                const regles = styleDePage.sheet.cssRules;
+                const nouveauStyle = document.createElement("style");
+                nouveauStyle.setAttribute("data-page", pageDemandee);
+                document.head.appendChild(nouveauStyle);
+
+                for (const regle of regles) {
+                    nouveauStyle.sheet.insertRule(regle.cssText);
+                }
+            }
 
             // on vient remplacer les éléments actuels par nos nouveaux éléments:
             document.title = `${titreDePage.innerText} \u2013 ${this.#nomDuSite}`; // ne nouveau titre du site
@@ -157,10 +168,6 @@ class Site {
             this.titreDePage = titreDePage;
             this.contenuPrincipal = "La page demandée n'existe pas.";
         })
-        .finally(() => {
-            // on indique que la page a fini de charger:
-            document.body.classList.remove("chargement");
-        });
     }
 }
 

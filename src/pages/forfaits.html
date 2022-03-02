@@ -1,7 +1,90 @@
 <h1>Nos forfaits</h1>
-<details>Description de la page</details>
+<meta-description>Esse aliquid non ipsa odit veniam exercitationem totam! Dicta dolores nobis voluptatum est consequuntur?</meta-description>
+
+<style>
+    table.forfaits {
+        width: 100%;
+        table-layout: fixed;
+        border: solid 1px var(--couleur-noir);
+        border-collapse: collapse;
+        font-size: 1.2em;
+    }
+
+    table.forfaits th {
+        background: var(--couleur-noir);
+        color: var(--couleur-blanc);
+        font-size: 1.2em;
+        padding: .3em 0 1.3em 0;
+    }
+
+    table.forfaits td {
+        border: solid 1px var(--couleur-noir);
+        padding: 8px;
+    }
+
+    table.forfaits .tarif {
+        font-weight: bolder;
+    }
+
+    table.forfaits .photo {
+        text-align: center;
+    }
+
+    table.forfaits .photo img {
+        display: block;
+        width: 100%;
+        height: 220px;
+    }
+
+    table.forfaits .action {
+        text-align: center;
+    }
+
+    table.forfaits .action a {
+        text-decoration: none;
+        display: block;
+        margin: 0 8px 0 8px;
+        padding: 8px;
+        background: rgb(104, 104, 255);
+        color: white;
+        border-radius: 5px;
+    }
+
+    table.forfaits .action a:hover {
+        background: blue;
+    }
+</style>
 
 <main>
-    <p>Contenu de la page des forfaits</p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, assumenda. Veritatis architecto praesentium quas officia consequuntur, velit, blanditiis labore quae ratione quam fuga voluptates quaerat adipisci placeat ipsum molestias qui quod incidunt? Obcaecati sint commodi perspiciatis laboriosam numquam debitis fugit, velit error perferendis sed sit eaque mollitia maiores! Minima labore quisquam nemo totam, ducimus sit dolor dolores nisi quam exercitationem voluptas consequuntur quae animi magni ipsum odit esse officia rerum dolorem voluptate recusandae accusamus hic? Facilis fuga quam culpa ex vitae distinctio commodi aliquid, ullam natus? Repellendus quidem, quaerat sed, amet in perferendis, vero numquam a molestiae odit quibusdam. Ad voluptatibus adipisci iure, praesentium quibusdam obcaecati iste quo repudiandae commodi amet eius numquam, qui delectus. Nemo velit ratione vero sequi enim nisi nostrum perspiciatis rem ipsum, perferendis id eligendi debitis optio sunt maxime exercitationem dolorum facere error at molestias eaque? Perspiciatis quod beatae exercitationem a architecto ipsa nam est! Maxime distinctio porro aliquid hic doloribus nobis reprehenderit amet fugit iste, exercitationem ut voluptatibus veniam deleniti quis in a assumenda dicta voluptatum asperiores minus? Animi ut atque ducimus corrupti deleniti. Alias repellendus debitis possimus labore qui perferendis dicta culpa libero, sit magnam praesentium fugiat itaque molestiae ratione modi architecto facilis quia deserunt distinctio aspernatur doloremque, ea ullam quis quae? Consequuntur cumque dolor nam quas laudantium. Accusantium ad sit doloribus illo unde tempora quia, aut velit nulla voluptatem ullam quam omnis optio exercitationem ea dignissimos non molestias laboriosam deserunt, blanditiis, at alias.</p>
+    <table class="forfaits">
+        <thead>
+            <tr>
+                <th>Forfait 1</th><th>Forfait 2</th><th>Forfait 3</th>
+            </tr>
+            <tr class="tarif">
+                <td>25$ / heure</td><td>42$ / heure</td><td>228$ / heure</td>
+            </tr>
+        </thead>
+        <tr class="desc">
+            <td>Molestias harum optio distinctio nam minus debitis deleniti rem voluptate assumenda tenetur reiciendis, perferendis repellendus nulla, fuga voluptatibus magni eos atque dignissimos?</td>
+            <td>Aperiam, incidunt, quia omnis fugit eveniet inventore error laborum illo quod porro sunt qui harum culpa dicta corrupti minus veritatis ipsum. Laboriosam.</td>
+            <td>Aliquam, numquam facilis voluptates quod sapiente sequi at explicabo odio aliquid eos voluptatibus? Necessitatibus assumenda, excepturi cum illum itaque aut aspernatur tempora.</td>
+        </tr>
+        <tr class="photo">
+            <td>
+                <img load="lazy" height="220" src="https://picsum.photos/400/220.webp?grayscale&random=0">
+            </td>
+            <td>
+                <img load="lazy" height="220" src="https://picsum.photos/400/220.webp?grayscale&random=3">
+            </td>
+            <td>
+                <img load="lazy" height="220" src="https://picsum.photos/400/220.webp?grayscale&random=2">
+            </td>
+        </tr>
+        <tr class="action">
+            <td><a href="#/forfaits/1" aria-label="Choisir le forfait 1">Choisir ce forfait</a></td>
+            <td><a href="#/forfaits/2" aria-label="Choisir le forfait 2">Choisir ce forfait</a></td>
+            <td><a href="#/forfaits/3" aria-label="Choisir le forfait 3">Choisir ce forfait</a></td>
+        </tr>
+    </table>
 </main>

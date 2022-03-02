@@ -1,17 +1,19 @@
 :root {
     /** représente la balise <html> */
 
-    /** on désire un défilement fluide */
-	scroll-behavior: smooth;
-}
+    --couleur-noir: #000; /** du texte foncé sur un fond clair */
+    --couleur-blanc: #fff; /** du texte clair sur un fond foncé */
 
-div.marge {
-	/** classe utilisée pour créer une marge */
-	width: 80%;
-	max-width: 1200px;
-	margin: 0 auto;
-    contain: paint;
-    border: solid 1px red; /* NOTE: couleur et bordure temporaire */
+    --couleur-en-tete: olive; /** bandeau d'en-tête du site */
+    --couleur-pied-page: lightblue; /** le bandeau de pied de page */
+    --couleur-titre: lightgreen; /** le bandeau de titre de page */
+    --couleur-fond: white; /** la couleur principale de fond */
+
+    /** on désire un défilement fluide */
+    scroll-behavior: smooth;
+
+    background: var(--couleur-fond);
+    color: var(--couleur-noir);
 }
 
 
@@ -22,48 +24,58 @@ div.marge {
 
 body > header {
     /** contient l'arrière-plan du bandeau */
-    background: beige; /* NOTE: couleur temporaire */
+    background: var(--couleur-en-tete);
+    padding-top: 1em;
 }
 
-body > header > div {
+body > header > .flex {
     /** conteneur principal de l'en-tête */
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-body > header > div > div {
+body > header > .flex > .logo {
     /** le conteneur de la portion logo et nom d'entreprise */
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-body > header picture img {
+body > header picture > img {
     /** le logo de l'entreprise */
     width: 48px;
     height: 48px;
 }
 
-body > header menu {
+body > header nav > .menu {
     /** le menu de navigation */
     display: flex;
-    gap: 2vw;
+    gap: 1vw;
 }
 
-body > header menu li {
+body > header nav > .menu > li {
     /** un élément du menu de navigation */
     display: inline-block;
 }
 
-body > header menu li.active {
+body > header nav > .menu > li.active {
     /** l'élément du menu qui représente la page présentement active */
-    background: cyan; /* NOTE: couleur temporaire */
+    background: #ffffff30;
 }
 
-body > header menu a {
+body > header nav > .menu > li:hover {
+    /** l'élément du menu qui est sous la souris */
+    filter: invert(1);
+    background: #00000030;
+}
+
+body > header nav > .menu a {
     /** un lien du menu */
     text-decoration: none;
+    display: inline-block;
+    padding: 8px;
+    color: var(--couleur-blanc);
 }
 
 
@@ -73,18 +85,23 @@ body > header menu a {
 *  ================================================================= */
 
 body > main {
-    /** conteneur principal du corps de la page */
-    background: lightgreen; /* NOTE: couleur temporaire */
+    /** le conteneur principal de la page */
+    background: var(--couleur-fond);
 }
 
 body > main > header {
-    /** l'en-tête du corps de la page */
-    background: lightpink; /* NOTE: couleur temporaire */
+    /** le bandeau de titre de la page */
+    background: var(--couleur-titre);
 }
 
-body > main > div {
-    /** conteneur du contenu de la page */
-    background: lightgrey; /* NOTE: couleur temporaire */
+body > main > header h1 {
+    font-size: 2.4em;
+    line-height: 1.6em;
+}
+
+body > main > .corps {
+    /** le corps de la page */
+    padding: 3em 0 3em 0;
 }
 
 
@@ -95,6 +112,8 @@ body > main > div {
 
 body > footer {
     display: block;
+    padding: 2em 0 3em 0;
+    background: var(--couleur-pied-page);
 }
 
 
@@ -103,7 +122,10 @@ body > footer {
 *  ===================== Styles utilitaires ========================
 *  ================================================================= */
 
-body.chargement > main > div, body.chargement > main > header > div {
-    /** on rend la page translucide lors du chargement d'une autre page */
-    opacity: .6;
+.marge {
+    /** classe utilisée pour créer une marge */
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    contain: paint;
 }

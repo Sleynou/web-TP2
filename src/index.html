@@ -23,10 +23,10 @@
 	</head>
 	<body>
 		<header>
-			<div class="marge">
-                <div>
+			<div class="marge flex">
+                <div class="logo">
 					<picture>
-						<img srcset="images/logo256.png 2x" src="images/logo256.png" alt="Logo du site"/>
+						<img srcset="images/logo256.png 2x" src="images/logo256.png" alt="Logo du site">
 					</picture>
 
 					<!-- le tout premier <h1> est toujours interprété par les lecteurs d'écran comme étant le titre de la page -->
@@ -34,14 +34,13 @@
                 </div>
 
                 <nav>
-                    <!-- la balise <menu> agit comme un <ul> mais apporte plus de contexte pour les lecteurs d'écran -->
-                    <menu role="list">
+                    <ul class="menu">
                         <li><a href="#">Accueil</a></li>
                         <li><a href="#/services">Services</a></li>
                         <li><a href="#/forfaits">Forfaits</a></li>
                         <li><a href="#/actualites">Actualités</a></li>
                         <li><a href="#/contact">Contact</a></li>
-                    </menu>
+                    </ul>
                 </nav>
 			</div>
 		</header>
@@ -53,14 +52,14 @@
                     <h1 role="status">Chargement...</h1>
                 </div>
             </header>
-            <div class="marge">
+            <div class="marge corps">
                 <p role="status">Veuillez patienter</p>
 			</div>
             <!-- le vrai contenu des pages se trouve dans le dossier pages/ -->
 		</main>
 		<footer>
 			<div class="marge">
-                Copyright &copy; 2022 &mdash; Entreprise Sans Nom, Inc.
+                Site web développé par Yanis Bounab &amp; Pascal Breton
 			</div>
 		</footer>
 	</body>
