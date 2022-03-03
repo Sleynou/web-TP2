@@ -1,13 +1,21 @@
 :root {
     /** représente la balise <html> */
 
-    --couleur-noir: #000; /** du texte foncé sur un fond clair */
-    --couleur-blanc: #fff; /** du texte clair sur un fond foncé */
+    --couleur-noir: #4E4E50; /** du texte foncé sur un fond clair */
+    --couleur-blanc: #F6F2EC; /** du texte clair sur un fond foncé */
 
-    --couleur-en-tete: olive; /** bandeau d'en-tête du site */
-    --couleur-pied-page: lightblue; /** le bandeau de pied de page */
-    --couleur-titre: lightgreen; /** le bandeau de titre de page */
-    --couleur-fond: white; /** la couleur principale de fond */
+    /** la palette principale est une harmonie triadique */
+    --couleur-primaire: 209 185 200;
+    --couleur-secondaire: 185 209 203;
+    --couleur-tertiaire: 209 201 185;
+
+    --couleur-fond: var(--couleur-blanc); /** la couleur principale de fond */
+    --couleur-en-tete: rgb(var(--couleur-fond)); /** bandeau d'en-tête du site */
+    --couleur-titre: rgb(var(--couleur-primaire)); /** le bandeau de titre de page */
+    --couleur-pied-page: rgb(var(--couleur-secondaire)); /** le bandeau de pied de page */
+
+    --couleur-menu-active: rgb(var(--couleur-tertiaire)); /** une page active dans le menu */
+    --couleur-menu-survol: rgb(var(--couleur-tertiaire) / 0.5); /** survol d'un page dans le menu */
 
     /** on désire un défilement fluide */
     scroll-behavior: smooth;
@@ -40,6 +48,8 @@ body > header > .flex > .logo {
     display: flex;
     align-items: center;
     gap: 8px;
+    text-decoration: none;
+    color: var(--couleur-noir);
 }
 
 body > header picture > img {
@@ -61,13 +71,12 @@ body > header nav > .menu > li {
 
 body > header nav > .menu > li.active {
     /** l'élément du menu qui représente la page présentement active */
-    background: #ffffff30;
+    background: var(--couleur-menu-active);
 }
 
 body > header nav > .menu > li:hover {
     /** l'élément du menu qui est sous la souris */
-    filter: invert(1);
-    background: #00000030;
+    background: var(--couleur-menu-survol);
 }
 
 body > header nav > .menu a {
@@ -75,7 +84,7 @@ body > header nav > .menu a {
     text-decoration: none;
     display: inline-block;
     padding: 8px;
-    color: var(--couleur-blanc);
+    color: var(--couleur-noir);
 }
 
 
@@ -92,6 +101,7 @@ body > main {
 body > main > header {
     /** le bandeau de titre de la page */
     background: var(--couleur-titre);
+    color: var(--couleur-noir);
 }
 
 body > main > header h1 {
@@ -114,6 +124,16 @@ body > footer {
     display: block;
     padding: 2em 0 3em 0;
     background: var(--couleur-pied-page);
+    color: var(--couleur-noir);
+}
+
+body > footer .marge {
+    display: flex;
+    justify-content: space-between;
+}
+
+body > footer a {
+    color: var(--couleur-noir);
 }
 
 

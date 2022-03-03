@@ -10,16 +10,23 @@
  * @typedef {string} IdentifiantPage
  */
 
+
+
 /** l'identifiant de la page d'accueil du site */
 const pageParDefaut = (/** @type {IdentifiantPage} */ "accueil"); //< page sur laquelle on arrive par défaut
 
 /** l'analyseur de fichier HTML qu'on utilise pour lire les pages du site */
 const domParser = new DOMParser();
 
+
+
 /** la classe principale du site */
 class Site {
     /** le nom de l'entreprise */
     #nomDuSite = document.title;
+
+    /** le ShadowRoot qui contient nos sous-pages */
+    #conteneur;
 
     /** ce constructeur est exécuté au chargement du site */
     constructor () {
@@ -63,7 +70,15 @@ class Site {
      * @param {NodeList} remplacement - les balises à utiliser comme remplacement
      */
     set contenuPrincipal (remplacement) {
-        return this.contenuPrincipal.replaceChildren(...remplacement);
+        if (!this.#conteneur) {
+            // on vide le contenu temporaire:
+            this.contenuPrincipal.replaceChildren();
+
+            // on crée une nouvelle arborescence:
+            this.#conteneur = this.contenuPrincipal.attachShadow({mode: "closed"});
+        }
+
+        return this.#conteneur.replaceChildren(...remplacement);
     }
 
     /**
@@ -125,10 +140,15 @@ class Site {
      * @listens globalThis#hashchange
      */
     changementPage () {
+        if (!document.location.hash.startsWith("#/") && document.location.href.includes("#")) {
+            // cas spécial: on désire seulement mettre le focus sur un élément
+            return;
+        }
+
         /** la page vers laquelle on désire aller  */
         const pageDemandee = (/** @type {IdentifiantPage} */ this.pageActuelle || pageParDefaut);
 
-        // ensuite, on charge la nouvelle page:
+        // on charge la nouvelle page:
         fetch(`pages/${pageDemandee}.html`)
         .then(reponse => reponse.text())
         .then(texte => domParser.parseFromString(texte, "text/html"))
@@ -139,16 +159,9 @@ class Site {
             const corpsDePage = html.querySelector("main");
             const styleDePage = html.querySelector("style");
 
-            // si la page comporte un style css spécifique, on vient l'intégrer:
-            if (styleDePage && !document.head.querySelector(`style[data-page=${pageDemandee}]`)) {
-                const regles = styleDePage.sheet.cssRules;
-                const nouveauStyle = document.createElement("style");
-                nouveauStyle.setAttribute("data-page", pageDemandee);
-                document.head.appendChild(nouveauStyle);
-
-                for (const regle of regles) {
-                    nouveauStyle.sheet.insertRule(regle.cssText);
-                }
+            // si la page comporte un style css spécifique, on vient l'intégrer au ShadowRoot:
+            if (styleDePage) {
+                corpsDePage.prepend(styleDePage);
             }
 
             // on vient remplacer les éléments actuels par nos nouveaux éléments:
@@ -167,7 +180,7 @@ class Site {
 
             this.titreDePage = titreDePage;
             this.contenuPrincipal = "La page demandée n'existe pas.";
-        })
+        });
     }
 }
 

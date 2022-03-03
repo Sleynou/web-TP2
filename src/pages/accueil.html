@@ -2,21 +2,35 @@
 <meta-description>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, quaerat deleniti quod dicta sit sed.</meta-description>
 
 <style>
-    .accueil.flex-demi {
+    .flex-demi {
         display: flex;
         justify-content: space-between;
         gap: 2em;
     }
+
+    h2 {
+        margin-bottom: 1em;
+        font-size: 1.2em;
+    }
+
+    p + p {
+        margin-top: 1em;
+    }
+
+    iframe {
+        border: double 3px rgb(var(--couleur-tertiaire));
+    }
 </style>
 
 <main>
-    <div class="accueil flex-demi">
+    <div class="flex-demi">
         <section>
-            <h2>Lorem ipsum dolor sit amet consectetur.</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In rem nam doloremque, saepe magni obcaecati libero. Facere aliquam quas expedita, atque repudiandae, deserunt a natus consequuntur non nesciunt placeat nemo tenetur culpa at praesentium earum laboriosam soluta quis ex quae nihil consequatur hic? Iusto incidunt error alias, aliquam necessitatibus totam ipsa, exercitationem repellendus provident eaque quos. Nesciunt non porro veritatis? Officia, enim error pariatur dignissimos delectus accusamus earum provident modi neque ad aspernatur corporis ab laudantium illum nostrum culpa commodi mollitia architecto? Optio corrupti temporibus placeat doloremque perferendis, facere illum neque sunt. Molestias ab sapiente ea. Expedita dolores quas architecto.</p>
+            <h2>Lorem ipsum dolor sit amet consectetur</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In rem nam doloremque, saepe magni obcaecati libero. Facere aliquam quas expedita, atque repudiandae, deserunt a natus consequuntur non nesciunt placeat nemo tenetur culpa at praesentium earum laboriosam soluta quis ex quae nihil consequatur hic?</p>
+            <p>Incidunt error alias, aliquam necessitatibus totam ipsa, exercitationem repellendus provident eaque quos. Nesciunt non porro veritatis? Officia, enim error pariatur dignissimos delectus accusamus earum provident modi neque ad aspernatur corporis ab laudantium illum nostrum culpa commodi mollitia architecto? Optio corrupti temporibus placeat doloremque perferendis, facere illum neque sunt. Molestias ab sapiente ea. Expedita dolores quas architecto.</p>
         </section>
         <aside>
-            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/f2WqMrAd598?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe title="vidéo Vimeo" src="https://player.vimeo.com/video/631043216?h=0434a26ca7&mute=1&autoplay=1&loop=1&dnt=1" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
         </aside>
     </div>
 </main>

@@ -4,14 +4,15 @@
 		<!-- le charset doit toujours être le premier élément du head -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title>Entreprise</title>
+		<title>CAM&#xFE60;RA</title>
         <meta name="description" content="description du site">
 		<!-- ce site est disponible sur https://tp2.breton.pm mais on ne souhaite pas l'indexer -->
 		<meta name="robots" content="noindex,nofollow">
 		<!-- Reseter est une feuille de style de réinitialisation similaire à Normalize -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reseter.css/2.0.0/reseter.min.css">
 		<link rel="stylesheet" href="css/style.css">
-		<link rel="icon" sizes="64x64" href="images/logo64.png">
+        <link rel="icon" href="favicon.ico" sizes="any">
+        <link rel="icon" href="images/logo.svg" type="image/svg+xml">
         <!-- on pré-charge l'entièreté des pages du site: -->
         <link rel="preload" href="pages/accueil.html" as="fetch" type="text/html">
         <link rel="preload" href="pages/services.html" as="fetch" type="text/html">
@@ -24,18 +25,19 @@
 	<body>
 		<header>
 			<div class="marge flex">
-                <div class="logo">
+                <a href="#/" class="logo" title="Retourner à l'accueil">
 					<picture>
-						<img srcset="images/logo256.png 2x" src="images/logo256.png" alt="Logo du site">
+                        <source srcset="images/logo.svg" type="image/svg+xml">
+						<img src="images/logo256.png" alt="Logo du site">
 					</picture>
 
 					<!-- le tout premier <h1> est toujours interprété par les lecteurs d'écran comme étant le titre de la page -->
-					<h1>Entreprise</h1>
-                </div>
+					<h1>CAM<sub>&amp;</sub>RA</h1>
+                </a>
 
                 <nav>
                     <ul class="menu">
-                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#/">Accueil</a></li>
                         <li><a href="#/services">Services</a></li>
                         <li><a href="#/forfaits">Forfaits</a></li>
                         <li><a href="#/actualites">Actualités</a></li>
@@ -59,7 +61,8 @@
 		</main>
 		<footer>
 			<div class="marge">
-                Site web développé par Yanis Bounab &amp; Pascal Breton
+                <span>Site web développé par Yanis Bounab &amp; Pascal Breton</span>
+                <a href="#">Remonter la page</a>
 			</div>
 		</footer>
 	</body>

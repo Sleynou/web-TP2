@@ -2,61 +2,63 @@
 <meta-description>Esse aliquid non ipsa odit veniam exercitationem totam! Dicta dolores nobis voluptatum est consequuntur?</meta-description>
 
 <style>
-    table.forfaits {
+    table {
         width: 100%;
         table-layout: fixed;
-        border: solid 1px var(--couleur-noir);
+        border: solid 1px rgb(var(--couleur-tertiaire));
         border-collapse: collapse;
         font-size: 1.2em;
     }
 
-    table.forfaits th {
-        background: var(--couleur-noir);
-        color: var(--couleur-blanc);
+    table th {
+        background: rgb(var(--couleur-tertiaire));
+        color: var(--couleur-noir);
         font-size: 1.2em;
         padding: .3em 0 1.3em 0;
     }
 
-    table.forfaits td {
-        border: solid 1px var(--couleur-noir);
+    table td {
+        border: solid 1px rgb(var(--couleur-tertiaire));
         padding: 8px;
+        vertical-align: top;
     }
 
-    table.forfaits .tarif {
+    table .tarif {
         font-weight: bolder;
     }
 
-    table.forfaits .photo {
+    table .photo {
         text-align: center;
     }
 
-    table.forfaits .photo img {
+    table .photo img {
         display: block;
         width: 100%;
         height: 220px;
+        filter: saturate(716%) hue-rotate(115deg) brightness(94%); /* on donne un effet artistique */
     }
 
-    table.forfaits .action {
+    table .action {
         text-align: center;
     }
 
-    table.forfaits .action a {
+    table .action a {
         text-decoration: none;
         display: block;
         margin: 0 8px 0 8px;
         padding: 8px;
-        background: rgb(104, 104, 255);
-        color: white;
+        background: rgb(var(--couleur-primaire));
+        color: var(--couleur-noir);
         border-radius: 5px;
     }
 
-    table.forfaits .action a:hover {
-        background: blue;
+    table .action a:hover {
+        background: rgb(var(--couleur-tertiaire));
     }
 </style>
 
 <main>
-    <table class="forfaits">
+    <table>
         <thead>
             <tr>
                 <th>Forfait 1</th><th>Forfait 2</th><th>Forfait 3</th>
@@ -72,13 +74,13 @@
         </tr>
         <tr class="photo">
             <td>
-                <img load="lazy" height="220" src="https://picsum.photos/400/220.webp?grayscale&random=0">
+                <img load="lazy" src="https://picsum.photos/400/220.webp?grayscale&random=0">
             </td>
             <td>
-                <img load="lazy" height="220" src="https://picsum.photos/400/220.webp?grayscale&random=3">
+                <img load="lazy" src="https://picsum.photos/400/220.webp?grayscale&random=3">
             </td>
             <td>
-                <img load="lazy" height="220" src="https://picsum.photos/400/220.webp?grayscale&random=2">
+                <img load="lazy" src="https://picsum.photos/400/220.webp?grayscale&random=2">
             </td>
         </tr>
         <tr class="action">
