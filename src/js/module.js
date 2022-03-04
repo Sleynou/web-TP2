@@ -21,13 +21,13 @@ const domParser = new DOMParser();
 /** une copie de la feuille de style principale du site */
 const stylePrincipal = document.styleSheets[1].ownerNode.cloneNode();
 
+/** le nom de l'entreprise */
+const nomDuSite = document.title;
+
 
 
 /** la classe principale du site */
 class Site {
-    /** le nom de l'entreprise */
-    #nomDuSite = document.title;
-
     /** le ShadowRoot qui contient nos sous-pages */
     #conteneur;
 
@@ -78,7 +78,7 @@ class Site {
             this.contenuPrincipal.replaceChildren();
 
             // on crée une nouvelle arborescence:
-            this.#conteneur = this.contenuPrincipal.attachShadow({mode: "open"});
+            this.#conteneur = this.contenuPrincipal.attachShadow({mode: "closed"});
         }
 
         return this.#conteneur.replaceChildren(...remplacement);
@@ -102,21 +102,6 @@ class Site {
         const fragmentAdresse = document.location.hash // on obtient le fragment d'adresse
             .trim().toLowerCase().split("/")[1]?.replaceAll(/[^a-z-]/g, ""); // on le nettoie
         return fragmentAdresse === "" ? pageParDefaut : fragmentAdresse;
-    }
-
-    /**
-     * change l'identifiant de la page, ce qui a pour effet secondaire de changer la page actuelle
-     *
-     * @param {IdentifiantPage} pageDemandee - l'identifiant de la nouvelle page
-     * @fires globalThis#hashchange
-     */
-    set pageActuelle (pageDemandee) {
-        if (!pageDemandee || pageDemandee == pageParDefaut) {
-            // on enlève tout simplement le fragment pour la page d'accueil:
-            document.location.hash = "";
-        } else {
-            document.location.hash = `#/${pageDemandee}`;
-        }
     }
 
     /**
@@ -171,20 +156,20 @@ class Site {
             */
             corpsDePage.prepend(stylePrincipal);
 
-            // si la page comporte un style css spécifique, on vient l'intégrer au ShadowRoot:
+            // si la page comporte un style CSS spécifique, on vient l'intégrer au ShadowRoot:
             if (styleDePage) {
                 corpsDePage.prepend(styleDePage);
             }
 
             // on vient remplacer les éléments actuels par nos nouveaux éléments:
-            document.title = `${titreDePage.innerText} \u2013 ${this.#nomDuSite}`; // ne nouveau titre du site
+            document.title = `${titreDePage.innerText} \u2013 ${nomDuSite}`; // ne nouveau titre du site
             this.titreDePage = titreDePage; // le nouveau titre de la page
             this.description = description; // la nouvelle description [SEO]
             this.contenuPrincipal = corpsDePage?.childNodes; // le nouveau contenu de la page
             this.pageMenuActive = pageDemandee; // on change la page active dans le menu
         })
         .catch(err => {
-            document.title = `Erreur 404 \u2013 ${this.#nomDuSite}`;
+            document.title = `Erreur 404 \u2013 ${nomDuSite}`;
 
             // on crée une page 404 de toutes pièces:
             const titreDePage = document.createElement("h1");
