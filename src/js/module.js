@@ -18,6 +18,9 @@ const pageParDefaut = (/** @type {IdentifiantPage} */ "accueil"); //< page sur l
 /** l'analyseur de fichier HTML qu'on utilise pour lire les pages du site */
 const domParser = new DOMParser();
 
+/** une copie de la feuille de style principale du site */
+const stylePrincipal = document.styleSheets[1].ownerNode.cloneNode();
+
 
 
 /** la classe principale du site */
@@ -159,7 +162,14 @@ class Site {
             const corpsDePage = html.querySelector("template")?.content;
             const styleDePage = html.querySelector("style");
 
-            globalThis.corps = corpsDePage;
+            /*
+                Le corps de la page est contenu dans un ShadowRoot. Or, le contenu d'un ShadowRoot
+                n'hérite pas des feuilles de style qui s'appliquent à son parent. Il faut donc
+                manuellement importer la feuille de style principale en ajoutant sa balise <link>
+                au début du ShadowRoot. Cela n'occasionnera pas une nouvelle requête réseau puisque
+                le navigateur a déjà analysé et interprété cette feuille de style.
+            */
+            corpsDePage.prepend(stylePrincipal);
 
             // si la page comporte un style css spécifique, on vient l'intégrer au ShadowRoot:
             if (styleDePage) {

@@ -187,3 +187,8 @@ body > footer a:hover {
     margin: 0 auto;
     contain: paint;
 }
+
+p + p {
+    /** on garde un espace entre les paragraphes */
+    margin-top: 1em;
+}
