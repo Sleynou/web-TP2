@@ -156,8 +156,10 @@ class Site {
             // on analyse notre nouvelle page:
             const titreDePage = html.querySelector("h1");
             const description = html.querySelector("meta-description").innerText.trim();
-            const corpsDePage = html.querySelector("main");
+            const corpsDePage = html.querySelector("template")?.content;
             const styleDePage = html.querySelector("style");
+
+            globalThis.corps = corpsDePage;
 
             // si la page comporte un style css spécifique, on vient l'intégrer au ShadowRoot:
             if (styleDePage) {
@@ -168,7 +170,7 @@ class Site {
             document.title = `${titreDePage.innerText} \u2013 ${this.#nomDuSite}`; // ne nouveau titre du site
             this.titreDePage = titreDePage; // le nouveau titre de la page
             this.description = description; // la nouvelle description [SEO]
-            this.contenuPrincipal = corpsDePage.childNodes; // le nouveau contenu de la page
+            this.contenuPrincipal = corpsDePage?.childNodes; // le nouveau contenu de la page
             this.pageMenuActive = pageDemandee; // on change la page active dans le menu
         })
         .catch(err => {
