@@ -75,7 +75,7 @@ class Site {
             this.contenuPrincipal.replaceChildren();
 
             // on crée une nouvelle arborescence:
-            this.#conteneur = this.contenuPrincipal.attachShadow({mode: "closed"});
+            this.#conteneur = this.contenuPrincipal.attachShadow({mode: "open"});
         }
 
         return this.#conteneur.replaceChildren(...remplacement);

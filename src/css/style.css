@@ -1,5 +1,9 @@
+
+/* =================================================================
+*  ================= Charte graphique du site ======================
+*  ================================================================= */
+
 :root {
-    /** représente la balise <html> */
 
     --couleur-noir: #4E4E50; /** du texte foncé sur un fond clair */
     --couleur-blanc: #F6F2EC; /** du texte clair sur un fond foncé */
@@ -9,19 +13,46 @@
     --couleur-secondaire: 185 209 203;
     --couleur-tertiaire: 209 201 185;
 
+    --police-titres: "Comfortaa", "sans-serif"; /** la police à utiliser pour les titres */
+    --police-texte: "Atkinson Hyperlegible", "sans-serif"; /** la police à utiliser pour tous les autres textes */
+}
+
+
+
+/* =================================================================
+*  =============== Configuration de l'apparence ====================
+*  ================================================================= */
+
+:root {
     --couleur-fond: var(--couleur-blanc); /** la couleur principale de fond */
-    --couleur-en-tete: rgb(var(--couleur-fond)); /** bandeau d'en-tête du site */
-    --couleur-titre: rgb(var(--couleur-primaire)); /** le bandeau de titre de page */
-    --couleur-pied-page: rgb(var(--couleur-secondaire)); /** le bandeau de pied de page */
+    --texte-fond: var(--couleur-noir); /** la couleur de texte principale */
+
+    --couleur-en-tete: rgb(var(--couleur-fond)); /** le fond du bandeau d'en-tête du site */
+    --texte-en-tete: rgb(var(--texte-fond)); /** la couleur du texte du bandeau d'en-tête du site */
+    --couleur-titre: rgb(var(--couleur-primaire)); /** le fond du bandeau de titre de page */
+    --texte-titre: rgb(var(--texte-fond)); /** la couleur du texte du bandeau de titre de page */
+    --couleur-corps: rgb(var(--couleur-en-tete)); /** le fond du corps de la page */
+    --texte-corps: rgb(var(--texte-en-tete)); /** la couleur du texte du corps de la page */
+    --couleur-pied-page: rgb(var(--couleur-secondaire)); /** le fond du bandeau de pied de page */
+    --texte-pied-page: rgb(var(--texte-fond)); /** la couleur du texte du bandeau de pied de page */
 
     --couleur-menu-active: rgb(var(--couleur-tertiaire)); /** une page active dans le menu */
-    --couleur-menu-survol: rgb(var(--couleur-tertiaire) / 0.5); /** survol d'un page dans le menu */
+    --couleur-menu-survol: rgb(var(--couleur-tertiaire) / .7); /** survol d'un page dans le menu */
+    --texte-menu: rgb(var(--texte-en-tete)); /** la couleur du texte des liens dans le menu */
+
+    /** image pour le contenu en cours de chargement: */
+    --image-chargement: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAQAAAD9CzEMAAAA0ElEQVR42u1YXQ6GIAzrsXq8HWSn4yJ83wNxBBMSJ00woXtDbVX2Cx6CIIQoqH8rEMFRm7ns/ZuVI5ATIKgUsHaNGoHwsLpWIOjDuDIOYj0sDV6RzAm94RVGT2FQa2LctfThnPoMBYcMBgdxsDkcpbfUpvHOck9iNVdS5iyMhWROnLLIBcS/SL3JB5uDcJguXXs4mqLg9JXWEiUzWcjz907bKK5tW2x8YHHjNdKvbh050Aua345e0b7HN5hyAGF6RuPHh8D9Bbo4+OhhSGrY/gEzMJ7bjJbx5QAAAABJRU5ErkJggg==");
 
     /** on désire un défilement fluide */
     scroll-behavior: smooth;
 
     background: var(--couleur-fond);
-    color: var(--couleur-noir);
+    font-family: var(--police-texte);
+    color: var(--texte-fond);
+}
+
+h1, h2, h3, h4, h5, h6, header, thead, th {
+    font-family: var(--police-titres);
 }
 
 
@@ -49,7 +80,7 @@ body > header > .flex > .logo {
     align-items: center;
     gap: 8px;
     text-decoration: none;
-    color: var(--couleur-noir);
+    color: var(--texte-en-tete);
 }
 
 body > header picture > img {
@@ -84,7 +115,7 @@ body > header nav > .menu a {
     text-decoration: none;
     display: inline-block;
     padding: 8px;
-    color: var(--couleur-noir);
+    color: var(--texte-menu);
 }
 
 
@@ -95,13 +126,14 @@ body > header nav > .menu a {
 
 body > main {
     /** le conteneur principal de la page */
-    background: var(--couleur-fond);
+    background: var(--couleur-corps);
 }
 
 body > main > header {
     /** le bandeau de titre de la page */
     background: var(--couleur-titre);
-    color: var(--couleur-noir);
+    color: var(--texte-titre);
+    cursor: default;
 }
 
 body > main > header h1 {
@@ -112,6 +144,7 @@ body > main > header h1 {
 body > main > .corps {
     /** le corps de la page */
     padding: 3em 0 3em 0;
+    color: var(--texte-corps);
 }
 
 
@@ -124,7 +157,7 @@ body > footer {
     display: block;
     padding: 2em 0 3em 0;
     background: var(--couleur-pied-page);
-    color: var(--couleur-noir);
+    color: var(--texte-pied-page);
 }
 
 body > footer .marge {
@@ -133,7 +166,12 @@ body > footer .marge {
 }
 
 body > footer a {
-    color: var(--couleur-noir);
+    color: var(--texte-pied-page);
+}
+
+body > footer a:hover {
+    background-color: rgb(var(--couleur-tertiaire) / .7);
+    text-decoration: none;
 }
 
 

@@ -19,6 +19,10 @@
         <link rel="preload" href="pages/forfaits.html" as="fetch" type="text/html">
         <link rel="preload" href="pages/actualites.html" as="fetch" type="text/html">
         <link rel="preload" href="pages/contact.html" as="fetch" type="text/html">
+        <!-- on ajoute les polices: -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&family=Comfortaa:wght@600&display=swap" rel="stylesheet">
         <!-- on demande au navigateur de charger le module principal après le chargement de la page: -->
         <script async src="js/module.js" type="module"></script>
 	</head>
@@ -51,18 +55,18 @@
             <!-- on utilise, tout de même, un contenu temporaire pendant le chargement initial: -->
             <header>
                 <div class="marge">
-                    <h1 role="status">Chargement...</h1>
+                    <h1 aria-hidden>&nbsp;</h1>
                 </div>
             </header>
             <div class="marge corps">
-                <p role="status">Veuillez patienter</p>
+                <p role="status">Chargement... Veuillez patienter.</p>
 			</div>
             <!-- le vrai contenu des pages se trouve dans le dossier pages/ -->
 		</main>
 		<footer>
 			<div class="marge">
                 <span>Site web développé par Yanis Bounab &amp; Pascal Breton</span>
-                <a href="#">Remonter la page</a>
+                <a href="#" title="Faire défiler jusqu'au haut de la page">Remonter la page</a>
 			</div>
 		</footer>
 	</body>

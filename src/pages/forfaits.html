@@ -13,6 +13,7 @@
     table th {
         background: rgb(var(--couleur-tertiaire));
         color: var(--couleur-noir);
+        font-family: var(--police-titres);
         font-size: 1.2em;
         padding: .3em 0 1.3em 0;
     }
@@ -29,6 +30,10 @@
 
     table .photo {
         text-align: center;
+    }
+
+    table .photo td {
+        background: var(--image-chargement) center center no-repeat;
     }
 
     table .photo img {
@@ -74,13 +79,13 @@
         </tr>
         <tr class="photo">
             <td>
-                <img load="lazy" src="https://picsum.photos/400/220.webp?grayscale&random=0">
+                <img load="lazy" alt="image du forfait 1" src="https://picsum.photos/400/220.webp?grayscale&random=0">
             </td>
             <td>
-                <img load="lazy" src="https://picsum.photos/400/220.webp?grayscale&random=3">
+                <img load="lazy" alt="image du forfait 2" src="https://picsum.photos/400/220.webp?grayscale&random=3">
             </td>
             <td>
-                <img load="lazy" src="https://picsum.photos/400/220.webp?grayscale&random=2">
+                <img load="lazy" alt="image du forfait 3" src="https://picsum.photos/400/220.webp?grayscale&random=2">
             </td>
         </tr>
         <tr class="action">
