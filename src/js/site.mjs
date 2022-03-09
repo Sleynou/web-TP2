@@ -33,7 +33,7 @@ class Site {
 
 	/**
 	 * l'ensemble des `Page` du `Site`
-	 * @type {Map<String,Page>}
+	 * @type {Map<IdentifiantPage, Page>}
 	 */
 	#pages = new Map();
 
