@@ -5,16 +5,16 @@
 
 :root {
 
-    --couleur-noir: #4E4E50; /** du texte foncé sur un fond clair */
-    --couleur-blanc: #F6F2EC; /** du texte clair sur un fond foncé */
+	--couleur-noir: #4E4E50; /** du texte foncé sur un fond clair */
+	--couleur-blanc: #F6F2EC; /** du texte clair sur un fond foncé */
 
-    /** la palette principale est une harmonie triadique */
-    --couleur-primaire: 209 185 200;
-    --couleur-secondaire: 185 209 203;
-    --couleur-tertiaire: 209 201 185;
+	/** la palette principale est une harmonie triadique */
+	--couleur-primaire: 209 185 200;
+	--couleur-secondaire: 185 209 203;
+	--couleur-tertiaire: 209 201 185;
 
-    --police-titres: "Comfortaa", "sans-serif"; /** la police à utiliser pour les titres */
-    --police-texte: "Atkinson Hyperlegible", "sans-serif"; /** la police à utiliser pour tous les autres textes */
+	--police-titres: "Comfortaa", "sans-serif"; /** la police à utiliser pour les titres */
+	--police-texte: "Atkinson Hyperlegible", "sans-serif"; /** la police à utiliser pour tous les autres textes */
 }
 
 
@@ -24,35 +24,35 @@
 *  ================================================================= */
 
 :root {
-    --couleur-fond: var(--couleur-blanc); /** la couleur principale de fond */
-    --texte-fond: var(--couleur-noir); /** la couleur de texte principale */
+	--couleur-fond: var(--couleur-blanc); /** la couleur principale de fond */
+	--texte-fond: var(--couleur-noir); /** la couleur de texte principale */
 
-    --couleur-en-tete: rgb(var(--couleur-fond)); /** le fond du bandeau d'en-tête du site */
-    --texte-en-tete: rgb(var(--texte-fond)); /** la couleur du texte du bandeau d'en-tête du site */
-    --couleur-titre: rgb(var(--couleur-primaire)); /** le fond du bandeau de titre de page */
-    --texte-titre: rgb(var(--texte-fond)); /** la couleur du texte du bandeau de titre de page */
-    --couleur-corps: rgb(var(--couleur-en-tete)); /** le fond du corps de la page */
-    --texte-corps: rgb(var(--texte-en-tete)); /** la couleur du texte du corps de la page */
-    --couleur-pied-page: rgb(var(--couleur-secondaire)); /** le fond du bandeau de pied de page */
-    --texte-pied-page: rgb(var(--texte-fond)); /** la couleur du texte du bandeau de pied de page */
+	--couleur-en-tete: rgb(var(--couleur-fond)); /** le fond du bandeau d'en-tête du site */
+	--texte-en-tete: rgb(var(--texte-fond)); /** la couleur du texte du bandeau d'en-tête du site */
+	--couleur-titre: rgb(var(--couleur-primaire)); /** le fond du bandeau de titre de page */
+	--texte-titre: rgb(var(--texte-fond)); /** la couleur du texte du bandeau de titre de page */
+	--couleur-corps: rgb(var(--couleur-en-tete)); /** le fond du corps de la page */
+	--texte-corps: rgb(var(--texte-en-tete)); /** la couleur du texte du corps de la page */
+	--couleur-pied-page: rgb(var(--couleur-secondaire)); /** le fond du bandeau de pied de page */
+	--texte-pied-page: rgb(var(--texte-fond)); /** la couleur du texte du bandeau de pied de page */
 
-    --couleur-menu-active: rgb(var(--couleur-tertiaire)); /** une page active dans le menu */
-    --couleur-menu-survol: rgb(var(--couleur-tertiaire) / .7); /** survol d'un page dans le menu */
-    --texte-menu: rgb(var(--texte-en-tete)); /** la couleur du texte des liens dans le menu */
+	--couleur-menu-active: rgb(var(--couleur-tertiaire)); /** une page active dans le menu */
+	--couleur-menu-survol: rgb(var(--couleur-tertiaire) / .7); /** survol d'un page dans le menu */
+	--texte-menu: rgb(var(--texte-en-tete)); /** la couleur du texte des liens dans le menu */
 
-    /** image pour le contenu en cours de chargement: */
-    --image-chargement: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAQAAAD9CzEMAAAA0ElEQVR42u1YXQ6GIAzrsXq8HWSn4yJ83wNxBBMSJ00woXtDbVX2Cx6CIIQoqH8rEMFRm7ns/ZuVI5ATIKgUsHaNGoHwsLpWIOjDuDIOYj0sDV6RzAm94RVGT2FQa2LctfThnPoMBYcMBgdxsDkcpbfUpvHOck9iNVdS5iyMhWROnLLIBcS/SL3JB5uDcJguXXs4mqLg9JXWEiUzWcjz907bKK5tW2x8YHHjNdKvbh050Aua345e0b7HN5hyAGF6RuPHh8D9Bbo4+OhhSGrY/gEzMJ7bjJbx5QAAAABJRU5ErkJggg==");
+	/** image pour le contenu en cours de chargement: */
+	--image-chargement: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAQAAAD9CzEMAAAA0ElEQVR42u1YXQ6GIAzrsXq8HWSn4yJ83wNxBBMSJ00woXtDbVX2Cx6CIIQoqH8rEMFRm7ns/ZuVI5ATIKgUsHaNGoHwsLpWIOjDuDIOYj0sDV6RzAm94RVGT2FQa2LctfThnPoMBYcMBgdxsDkcpbfUpvHOck9iNVdS5iyMhWROnLLIBcS/SL3JB5uDcJguXXs4mqLg9JXWEiUzWcjz907bKK5tW2x8YHHjNdKvbh050Aua345e0b7HN5hyAGF6RuPHh8D9Bbo4+OhhSGrY/gEzMJ7bjJbx5QAAAABJRU5ErkJggg==");
 
-    /** on désire un défilement fluide */
-    scroll-behavior: smooth;
+	/** on désire un défilement fluide */
+	scroll-behavior: smooth;
 
-    background: var(--couleur-fond);
-    font-family: var(--police-texte);
-    color: var(--texte-fond);
+	background: var(--couleur-fond);
+	font-family: var(--police-texte);
+	color: var(--texte-fond);
 }
 
 h1, h2, h3, h4, h5, h6, header, thead, th {
-    font-family: var(--police-titres);
+	font-family: var(--police-titres);
 }
 
 
@@ -62,60 +62,60 @@ h1, h2, h3, h4, h5, h6, header, thead, th {
 *  ================================================================= */
 
 body > header {
-    /** contient l'arrière-plan du bandeau */
-    background: var(--couleur-en-tete);
-    padding-top: 1em;
+	/** contient l'arrière-plan du bandeau */
+	background: var(--couleur-en-tete);
+	padding-top: 1em;
 }
 
 body > header > .flex {
-    /** conteneur principal de l'en-tête */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+	/** conteneur principal de l'en-tête */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 body > header > .flex > .logo {
-    /** le conteneur de la portion logo et nom d'entreprise */
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: var(--texte-en-tete);
+	/** le conteneur de la portion logo et nom d'entreprise */
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	text-decoration: none;
+	color: var(--texte-en-tete);
 }
 
 body > header picture > img {
-    /** le logo de l'entreprise */
-    width: 48px;
-    height: 48px;
+	/** le logo de l'entreprise */
+	width: 48px;
+	height: 48px;
 }
 
 body > header nav > .menu {
-    /** le menu de navigation */
-    display: flex;
-    gap: 1vw;
+	/** le menu de navigation */
+	display: flex;
+	gap: 1vw;
 }
 
 body > header nav > .menu > li {
-    /** un élément du menu de navigation */
-    display: inline-block;
+	/** un élément du menu de navigation */
+	display: inline-block;
 }
 
 body > header nav > .menu > li.active {
-    /** l'élément du menu qui représente la page présentement active */
-    background: var(--couleur-menu-active);
+	/** l'élément du menu qui représente la page présentement active */
+	background: var(--couleur-menu-active);
 }
 
 body > header nav > .menu > li:hover {
-    /** l'élément du menu qui est sous la souris */
-    background: var(--couleur-menu-survol);
+	/** l'élément du menu qui est sous la souris */
+	background: var(--couleur-menu-survol);
 }
 
 body > header nav > .menu a {
-    /** un lien du menu */
-    text-decoration: none;
-    display: inline-block;
-    padding: 8px;
-    color: var(--texte-menu);
+	/** un lien du menu */
+	text-decoration: none;
+	display: inline-block;
+	padding: 8px;
+	color: var(--texte-menu);
 }
 
 
@@ -125,26 +125,32 @@ body > header nav > .menu a {
 *  ================================================================= */
 
 body > main {
-    /** le conteneur principal de la page */
-    background: var(--couleur-corps);
+	/** le conteneur principal de la page */
+	background: var(--couleur-corps);
 }
 
 body > main > header {
-    /** le bandeau de titre de la page */
-    background: var(--couleur-titre);
-    color: var(--texte-titre);
-    cursor: default;
+	/** le bandeau de titre de la page */
+	background: var(--couleur-titre);
+	color: var(--texte-titre);
+	cursor: default;
 }
 
 body > main > header h1 {
-    font-size: 2.4em;
-    line-height: 1.6em;
+	font-size: 2.4em;
+	line-height: 1.6em;
 }
 
 body > main > .corps {
-    /** le corps de la page */
-    padding: 3em 0 3em 0;
-    color: var(--texte-corps);
+	/** le corps de la page */
+	padding: 3em 0 3em 0;
+	color: var(--texte-corps);
+}
+
+body > main > .corps section:not(:first-of-type)
+{
+	/** on désire un espace entre les sections */
+	margin-top: 3em;
 }
 
 
@@ -154,24 +160,24 @@ body > main > .corps {
 *  ================================================================= */
 
 body > footer {
-    display: block;
-    padding: 2em 0 3em 0;
-    background: var(--couleur-pied-page);
-    color: var(--texte-pied-page);
+	display: block;
+	padding: 2em 0 3em 0;
+	background: var(--couleur-pied-page);
+	color: var(--texte-pied-page);
 }
 
 body > footer .marge {
-    display: flex;
-    justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 }
 
 body > footer a {
-    color: var(--texte-pied-page);
+	color: var(--texte-pied-page);
 }
 
 body > footer a:hover {
-    background-color: rgb(var(--couleur-tertiaire) / .7);
-    text-decoration: none;
+	background-color: rgb(var(--couleur-tertiaire) / .7);
+	text-decoration: none;
 }
 
 
@@ -181,14 +187,24 @@ body > footer a:hover {
 *  ================================================================= */
 
 .marge {
-    /** classe utilisée pour créer une marge */
-    width: 80%;
-    max-width: 1200px;
-    margin: 0 auto;
-    contain: paint;
+	/** classe utilisée pour créer une marge */
+	width: 80%;
+	max-width: 1200px;
+	margin: 0 auto;
+	contain: paint;
 }
 
 p + p {
-    /** on garde un espace entre les paragraphes */
-    margin-top: 1em;
+	/** on garde un espace entre les paragraphes */
+	margin-top: 1em;
+}
+
+h2 {
+	/** taille du deuxième niveau d'en-tête */
+	font-size: 1.2em;
+}
+
+h2 + p {
+	/** séparation entre un en-tête et le texte */
+	margin-top: 1em;
 }

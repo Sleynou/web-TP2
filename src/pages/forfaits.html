@@ -2,95 +2,95 @@
 <meta-description>Esse aliquid non ipsa odit veniam exercitationem totam! Dicta dolores nobis voluptatum est consequuntur?</meta-description>
 
 <style>
-    table {
-        width: 100%;
-        table-layout: fixed;
-        border: solid 1px rgb(var(--couleur-tertiaire));
-        border-collapse: collapse;
-        font-size: 1.2em;
-    }
+	table {
+		width: 100%;
+		table-layout: fixed;
+		border: solid 1px rgb(var(--couleur-tertiaire));
+		border-collapse: collapse;
+		font-size: 1.2em;
+	}
 
-    table th {
-        background: rgb(var(--couleur-tertiaire));
-        color: var(--couleur-noir);
-        font-size: 1.2em;
-        padding: .3em 0 1.3em 0;
-    }
+	table th {
+		background: rgb(var(--couleur-tertiaire));
+		color: var(--couleur-noir);
+		font-size: 1.2em;
+		padding: .3em 0 1.3em 0;
+	}
 
-    table td {
-        border: solid 1px rgb(var(--couleur-tertiaire));
-        padding: 8px;
-        vertical-align: top;
-    }
+	table td {
+		border: solid 1px rgb(var(--couleur-tertiaire));
+		padding: 8px;
+		vertical-align: top;
+	}
 
-    table .tarif {
-        font-weight: bolder;
-    }
+	table .tarif {
+		font-weight: bolder;
+	}
 
-    table .photo {
-        text-align: center;
-    }
+	table .photo {
+		text-align: center;
+	}
 
-    table .photo td {
-        background: var(--image-chargement) center center no-repeat;
-    }
+	table .photo td {
+		background: var(--image-chargement) center center no-repeat;
+	}
 
-    table .photo img {
-        display: block;
-        width: 100%;
-        height: 220px;
-        filter: saturate(716%) hue-rotate(115deg) brightness(94%); /* on donne un effet artistique */
-    }
+	table .photo img {
+		display: block;
+		width: 100%;
+		height: 220px;
+		filter: saturate(716%) hue-rotate(115deg) brightness(94%); /* on donne un effet artistique */
+	}
 
-    table .action {
-        text-align: center;
-    }
+	table .action {
+		text-align: center;
+	}
 
-    table .action a {
-        text-decoration: none;
-        display: block;
-        margin: 0 8px 0 8px;
-        padding: 8px;
-        background: rgb(var(--couleur-primaire));
-        color: var(--couleur-noir);
-        border-radius: 5px;
-    }
+	table .action a {
+		text-decoration: none;
+		display: block;
+		margin: 0 8px 0 8px;
+		padding: 8px;
+		background: rgb(var(--couleur-primaire));
+		color: var(--couleur-noir);
+		border-radius: 5px;
+	}
 
-    table .action a:hover {
-        background: rgb(var(--couleur-tertiaire));
-    }
+	table .action a:hover {
+		background: rgb(var(--couleur-tertiaire));
+	}
 </style>
 
 <template>
-    <table>
-        <thead>
-            <tr>
-                <th>Forfait 1</th><th>Forfait 2</th><th>Forfait 3</th>
-            </tr>
-            <tr class="tarif">
-                <td>25$ / heure</td><td>42$ / heure</td><td>228$ / heure</td>
-            </tr>
-        </thead>
-        <tr class="desc">
-            <td>Molestias harum optio distinctio nam minus debitis deleniti rem voluptate assumenda tenetur reiciendis, perferendis repellendus nulla, fuga voluptatibus magni eos atque dignissimos?</td>
-            <td>Aperiam, incidunt, quia omnis fugit eveniet inventore error laborum illo quod porro sunt qui harum culpa dicta corrupti minus veritatis ipsum. Laboriosam.</td>
-            <td>Aliquam, numquam facilis voluptates quod sapiente sequi at explicabo odio aliquid eos voluptatibus? Necessitatibus assumenda, excepturi cum illum itaque aut aspernatur tempora.</td>
-        </tr>
-        <tr class="photo">
-            <td>
-                <img load="lazy" alt="image du forfait 1" src="https://picsum.photos/400/220.webp?grayscale&random=0">
-            </td>
-            <td>
-                <img load="lazy" alt="image du forfait 2" src="https://picsum.photos/400/220.webp?grayscale&random=3">
-            </td>
-            <td>
-                <img load="lazy" alt="image du forfait 3" src="https://picsum.photos/400/220.webp?grayscale&random=2">
-            </td>
-        </tr>
-        <tr class="action">
-            <td><a href="#/forfaits/1" aria-label="Choisir le forfait 1">Choisir ce forfait</a></td>
-            <td><a href="#/forfaits/2" aria-label="Choisir le forfait 2">Choisir ce forfait</a></td>
-            <td><a href="#/forfaits/3" aria-label="Choisir le forfait 3">Choisir ce forfait</a></td>
-        </tr>
-    </table>
+	<table>
+		<thead>
+			<tr>
+				<th>Forfait 1</th><th>Forfait 2</th><th>Forfait 3</th>
+			</tr>
+			<tr class="tarif">
+				<td>25$ / heure</td><td>42$ / heure</td><td>228$ / heure</td>
+			</tr>
+		</thead>
+		<tr class="desc">
+			<td>Molestias harum optio distinctio nam minus debitis deleniti rem voluptate assumenda tenetur reiciendis, perferendis repellendus nulla, fuga voluptatibus magni eos atque dignissimos?</td>
+			<td>Aperiam, incidunt, quia omnis fugit eveniet inventore error laborum illo quod porro sunt qui harum culpa dicta corrupti minus veritatis ipsum. Laboriosam.</td>
+			<td>Aliquam, numquam facilis voluptates quod sapiente sequi at explicabo odio aliquid eos voluptatibus? Necessitatibus assumenda, excepturi cum illum itaque aut aspernatur tempora.</td>
+		</tr>
+		<tr class="photo">
+			<td>
+				<img load="lazy" alt="image du forfait 1" src="https://picsum.photos/400/220.webp?grayscale&random=0">
+			</td>
+			<td>
+				<img load="lazy" alt="image du forfait 2" src="https://picsum.photos/400/220.webp?grayscale&random=3">
+			</td>
+			<td>
+				<img load="lazy" alt="image du forfait 3" src="https://picsum.photos/400/220.webp?grayscale&random=2">
+			</td>
+		</tr>
+		<tr class="action">
+			<td><a href="#/forfaits/1" aria-label="Choisir le forfait 1">Choisir ce forfait</a></td>
+			<td><a href="#/forfaits/2" aria-label="Choisir le forfait 2">Choisir ce forfait</a></td>
+			<td><a href="#/forfaits/3" aria-label="Choisir le forfait 3">Choisir ce forfait</a></td>
+		</tr>
+	</table>
 </template>

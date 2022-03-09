@@ -1,0 +1,35 @@
+<!--
+	Page d'erreur 404:
+	Cette page n'est normalement pas visible sur le site.
+	Elle est utilisée lorsque l'on tente de charger une page qui n'existe pas.
+-->
+
+<h1>Erreur 404: Page introuvable</h1>
+
+<style>
+	.boutons {
+		margin-top: 2em;
+	}
+
+	a {
+		text-decoration: none;
+		display: inline-block;
+		padding: 8px;
+		background: rgb(var(--couleur-tertiaire));
+		color: var(--couleur-noir);
+		border-radius: 5px;
+	}
+
+	a:hover {
+		background: rgb(var(--couleur-primaire));
+	}
+</style>
+
+<template>
+	<h2>La page demandée n'existe pas</h2>
+	<p>Nous n'arrivons pas à charger la page demandée. Merci de vérifier l'adresse saisie.</p>
+	<p>Il est possible que cette page aie été supprimée.</p>
+	<nav class="boutons">
+		<a href="#/contact">Rapporter cet incident</a>
+	</nav>
+</template>

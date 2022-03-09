@@ -5,68 +5,73 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>CAM&#xFE60;RA</title>
-        <meta name="description" content="description du site">
+		<meta name="description" content="description du site">
 		<!-- ce site est disponible sur https://tp2.breton.pm mais on ne souhaite pas l'indexer -->
 		<meta name="robots" content="noindex,nofollow">
 		<!-- Reseter est une feuille de style de réinitialisation similaire à Normalize -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reseter.css/2.0.0/reseter.min.css">
 		<link rel="stylesheet" href="css/style.css">
-        <link rel="icon" href="favicon.ico" sizes="any">
-        <link rel="icon" href="images/logo.svg" type="image/svg+xml">
-        <!-- on pré-charge l'entièreté des pages du site: -->
-        <link rel="preload" href="pages/accueil.html" as="fetch" type="text/html">
-        <link rel="preload" href="pages/services.html" as="fetch" type="text/html">
-        <link rel="preload" href="pages/forfaits.html" as="fetch" type="text/html">
-        <link rel="preload" href="pages/actualites.html" as="fetch" type="text/html">
-        <link rel="preload" href="pages/contact.html" as="fetch" type="text/html">
-        <!-- on ajoute les polices: -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&family=Comfortaa:wght@600&display=swap" rel="stylesheet">
-        <!-- on demande au navigateur de charger le module principal après le chargement de la page: -->
-        <script async src="js/module.js" type="module"></script>
+		<link rel="icon" href="favicon.ico" sizes="any">
+		<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+		<!-- on pré-charge l'entièreté des pages du site: -->
+		<link rel="preload" href="pages/accueil.html" as="fetch" type="text/html">
+		<link rel="prefetch" href="pages/services.html" as="fetch" type="text/html">
+		<link rel="prefetch" href="pages/forfaits.html" as="fetch" type="text/html">
+		<link rel="prefetch" href="pages/actualites.html" as="fetch" type="text/html">
+		<link rel="prefetch" href="pages/contact.html" as="fetch" type="text/html">
+		<!-- on ajoute les polices: -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&family=Comfortaa:wght@600&display=swap" rel="stylesheet">
+		<!-- on demande au navigateur de charger le module principal après le chargement de la page: -->
+		<link rel="modulepreload" href="js/page.mjs">
+		<script async src="js/site.mjs" type="module"></script>
+		<!-- ce script affiche un message d'erreur lorsqu'on tente d'ouvrir index.html directement: -->
+		<script async defer src="js/test-serveur-http.js"></script>
 	</head>
 	<body>
 		<header>
 			<div class="marge flex">
-                <a href="#/" class="logo" title="Retourner à l'accueil">
+				<a href="#/" class="logo" title="Retourner à l'accueil">
 					<picture>
-                        <source srcset="images/logo.svg" type="image/svg+xml">
+						<source srcset="images/logo.svg" type="image/svg+xml">
 						<img src="images/logo256.png" alt="Logo du site">
 					</picture>
 
 					<!-- le tout premier <h1> est toujours interprété par les lecteurs d'écran comme étant le titre de la page -->
 					<h1>CAM<sub>&amp;</sub>RA</h1>
-                </a>
+				</a>
 
-                <nav>
-                    <ul class="menu">
-                        <li><a href="#/">Accueil</a></li>
-                        <li><a href="#/services">Services</a></li>
-                        <li><a href="#/forfaits">Forfaits</a></li>
-                        <li><a href="#/actualites">Actualités</a></li>
-                        <li><a href="#/contact">Contact</a></li>
-                    </ul>
-                </nav>
+				<nav>
+					<ul class="menu">
+						<li><a href="#/">Accueil</a></li>
+						<li><a href="#/services">Services</a></li>
+						<li><a href="#/forfaits">Forfaits</a></li>
+						<li><a href="#/actualites">Actualités</a></li>
+						<li><a href="#/contact">Contact</a></li>
+					</ul>
+				</nav>
 			</div>
 		</header>
+
 		<main>
-            <!-- ce contenu dynamique est chargé et géré par le module javascript -->
-            <!-- on utilise, tout de même, un contenu temporaire pendant le chargement initial: -->
-            <header>
-                <div class="marge">
-                    <h1 aria-hidden>&nbsp;</h1>
-                </div>
-            </header>
-            <div class="marge corps">
-                <p role="status">Chargement... Veuillez patienter.</p>
+			<!-- ce contenu dynamique est chargé et géré par le module javascript -->
+			<!-- on utilise, tout de même, un contenu temporaire pendant le chargement initial: -->
+			<header>
+				<div class="marge">
+					<h1 aria-hidden="true">&nbsp;</h1>
+				</div>
+			</header>
+			<div class="marge corps">
+				<p role="status">Chargement... Veuillez patienter.</p>
 			</div>
-            <!-- le vrai contenu des pages se trouve dans le dossier pages/ -->
+			<!-- le vrai contenu des pages se trouve dans le dossier pages/ -->
 		</main>
+
 		<footer>
 			<div class="marge">
-                <span>Site web développé par Yanis Bounab &amp; Pascal Breton</span>
-                <a href="#" title="Faire défiler jusqu'au haut de la page">Remonter la page</a>
+				<span>Site web développé par Yanis Bounab &amp; Pascal Breton</span>
+				<a href="#" title="Faire défiler jusqu'au haut de la page">Remonter la page</a>
 			</div>
 		</footer>
 	</body>
