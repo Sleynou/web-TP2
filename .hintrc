@@ -1,0 +1,25 @@
+{
+	"extends": ["web-recommended"],
+	"formatters": [
+		"summary",
+		"html"
+	],
+	"hints": {
+		"no-http-redirects": "off",
+		"content-type": "off"
+	},
+	"ignoredUrls": [
+		{
+			"domain": "cdnjs.cloudflare.com",
+			"hints": ["*"]
+		},
+		{
+			"domain": "fonts.googleapis.com",
+			"hints": ["*"]
+		},
+		{
+			"domain": "fonts.gstatic.com",
+			"hints": ["*"]
+		}
+	]
+}

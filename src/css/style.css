@@ -1,3 +1,14 @@
+/* =================================================================
+*  ================= Règles de style communes ======================
+*  ================================================================= */
+
+*, *::before, *::after {
+	box-sizing: inherit;
+	padding: 0;
+	margin: 0;
+}
+
+
 
 /* =================================================================
 *  ================= Charte graphique du site ======================
@@ -15,6 +26,8 @@
 
 	--police-titres: "Comfortaa", "sans-serif"; /** la police à utiliser pour les titres */
 	--police-texte: "Atkinson Hyperlegible", "sans-serif"; /** la police à utiliser pour tous les autres textes */
+
+	--interligne: 1.15; /** espacement des lignes de texte */
 }
 
 
@@ -48,11 +61,46 @@
 
 	background: var(--couleur-fond);
 	font-family: var(--police-texte);
+	line-height: var(--interligne);
 	color: var(--texte-fond);
+	box-sizing: border-box;
+}
+
+sub {
+	/** les textes en indice */
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+	bottom: -0.25em;
+}
+
+strong {
+	/** texte avec emphase fort */
+	font-weight: bolder;
 }
 
 h1, h2, h3, h4, h5, h6, header, thead, th {
+	/** police des titres */
 	font-family: var(--police-titres);
+}
+
+h1, h2, h3, h4, h4, h6 {
+	/** espacement des titres */
+	margin: .67em 0;
+}
+
+h2 + p, p + p {
+	/** on garde un espace entre les paragraphes */
+	margin-top: 1em;
+}
+
+.marge {
+	/** classe utilisée pour créer une marge */
+	width: 80%;
+	max-width: 1200px;
+	margin: 0 auto;
+	contain: paint;
 }
 
 
@@ -126,6 +174,7 @@ body > header nav > .menu a {
 
 body > main {
 	/** le conteneur principal de la page */
+	display: block;
 	background: var(--couleur-corps);
 }
 
@@ -143,12 +192,11 @@ body > main > header h1 {
 
 body > main > .corps {
 	/** le corps de la page */
-	padding: 3em 0 3em 0;
+	padding: 3em 0;
 	color: var(--texte-corps);
 }
 
-body > main > .corps section:not(:first-of-type)
-{
+body > main > .corps section:not(:first-of-type) {
 	/** on désire un espace entre les sections */
 	margin-top: 3em;
 }
@@ -161,7 +209,7 @@ body > main > .corps section:not(:first-of-type)
 
 body > footer {
 	display: block;
-	padding: 2em 0 3em 0;
+	padding: 2em 0 3em;
 	background: var(--couleur-pied-page);
 	color: var(--texte-pied-page);
 }
@@ -178,33 +226,4 @@ body > footer a {
 body > footer a:hover {
 	background-color: rgb(var(--couleur-tertiaire) / .7);
 	text-decoration: none;
-}
-
-
-
-/* =================================================================
-*  ===================== Styles utilitaires ========================
-*  ================================================================= */
-
-.marge {
-	/** classe utilisée pour créer une marge */
-	width: 80%;
-	max-width: 1200px;
-	margin: 0 auto;
-	contain: paint;
-}
-
-p + p {
-	/** on garde un espace entre les paragraphes */
-	margin-top: 1em;
-}
-
-h2 {
-	/** taille du deuxième niveau d'en-tête */
-	font-size: 1.2em;
-}
-
-h2 + p {
-	/** séparation entre un en-tête et le texte */
-	margin-top: 1em;
 }

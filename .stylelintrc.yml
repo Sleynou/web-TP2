@@ -1,0 +1,14 @@
+extends: stylelint-config-standard
+
+rules:
+  indentation: tab
+  max-empty-lines: 3
+  number-leading-zero: null
+  custom-property-empty-line-before: null
+  no-empty-first-line: null
+  color-hex-case: upper
+  alpha-value-notation: number
+  declaration-empty-line-before: null
+  selector-list-comma-newline-after: null
+  no-descending-specificity: null
+  no-duplicate-selectors: null # À RETIRER

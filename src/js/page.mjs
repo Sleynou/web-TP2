@@ -5,7 +5,7 @@
  */
 
 /** une copie de la feuille de style principale du site */
-const stylePrincipal = document.styleSheets[1].ownerNode.cloneNode();
+const stylePrincipal = document.querySelector('link[href^="css/"]');
 
 /** l'analyseur de fichier HTML qu'on utilise pour lire les pages du site */
 const domParser = new DOMParser();
@@ -78,7 +78,7 @@ export default class Page {
 			au début du ShadowRoot. Cela n'occasionnera pas une nouvelle requête réseau puisque
 			le navigateur a déjà analysé et interprété cette feuille de style.
 		*/
-		corps.prepend(stylePrincipal);
+		corps.prepend(stylePrincipal.cloneNode());
 
 		// si la page comporte un style CSS spécifique, on vient l'intégrer au ShadowRoot:
 		if (styleDePage) {
