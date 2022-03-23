@@ -37,6 +37,9 @@ class Site {
 	 */
 	#pages = new Map();
 
+	/** si nous n'avons pas encore activé aucune page */
+	#chargementInitial = true;
+
 	/** ce constructeur est exécuté au chargement du site */
 	constructor () {
 		/** on surveille le changement de fragment d'adresse du site */
@@ -139,7 +142,9 @@ class Site {
 	 * @listens globalThis#hashchange
 	 */
 	async changementPage () {
-		if (!document.location.hash.startsWith("#/") && document.location.href.includes("#")) {
+		const pasUnePage = !document.location.hash.startsWith("#/") && document.location.href.includes("#");
+
+		if (pasUnePage && !this.#chargementInitial) {
 			// cas spécial: on désire seulement mettre le focus sur un élément
 			return;
 		}
@@ -154,6 +159,7 @@ class Site {
 
 		// on active la page
 		pageEnCache.activer();
+		this.#chargementInitial = false; // nous avons activé au moins une page
 	}
 
 	/**

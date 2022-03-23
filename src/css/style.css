@@ -1,5 +1,5 @@
 /* =================================================================
-*  ================= Règles de style communes ======================
+*  =================== Règles universelles =========================
 *  ================================================================= */
 
 *, *::before, *::after {
@@ -15,11 +15,14 @@
 *  ================================================================= */
 
 :root {
+	/*
+		les couleurs sont sous la forme R G B;
+		on les utilise avec la fonction rgb: rgb(var(--couleur-XXX) / alpha);
+	*/
+	--couleur-noir: 78 78 80; /** du texte foncé sur un fond clair */
+	--couleur-blanc: 246 242 236; /** du texte clair sur un fond foncé */
 
-	--couleur-noir: #4E4E50; /** du texte foncé sur un fond clair */
-	--couleur-blanc: #F6F2EC; /** du texte clair sur un fond foncé */
-
-	/** la palette principale est une harmonie triadique */
+	/** la palette principale est une harmonie triadique: */
 	--couleur-primaire: 209 185 200;
 	--couleur-secondaire: 185 209 203;
 	--couleur-tertiaire: 209 201 185;
@@ -37,8 +40,8 @@
 *  ================================================================= */
 
 :root {
-	--couleur-fond: var(--couleur-blanc); /** la couleur principale de fond */
-	--texte-fond: var(--couleur-noir); /** la couleur de texte principale */
+	--couleur-fond: rgb(var(--couleur-blanc)); /** la couleur principale de fond */
+	--texte-fond: rgb(var(--couleur-noir)); /** la couleur de texte principale */
 
 	--couleur-en-tete: rgb(var(--couleur-fond)); /** le fond du bandeau d'en-tête du site */
 	--texte-en-tete: rgb(var(--texte-fond)); /** la couleur du texte du bandeau d'en-tête du site */
@@ -52,6 +55,8 @@
 	--couleur-menu-active: rgb(var(--couleur-tertiaire)); /** une page active dans le menu */
 	--couleur-menu-survol: rgb(var(--couleur-tertiaire) / .7); /** survol d'un page dans le menu */
 	--texte-menu: rgb(var(--texte-en-tete)); /** la couleur du texte des liens dans le menu */
+
+	--radius-coins: 5px; /* le radius à utiliser pour les éléments avec des coins ronds */
 
 	/** image pour le contenu en cours de chargement: */
 	--image-chargement: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAQAAAD9CzEMAAAA0ElEQVR42u1YXQ6GIAzrsXq8HWSn4yJ83wNxBBMSJ00woXtDbVX2Cx6CIIQoqH8rEMFRm7ns/ZuVI5ATIKgUsHaNGoHwsLpWIOjDuDIOYj0sDV6RzAm94RVGT2FQa2LctfThnPoMBYcMBgdxsDkcpbfUpvHOck9iNVdS5iyMhWROnLLIBcS/SL3JB5uDcJguXXs4mqLg9JXWEiUzWcjz907bKK5tW2x8YHHjNdKvbh050Aua345e0b7HN5hyAGF6RuPHh8D9Bbo4+OhhSGrY/gEzMJ7bjJbx5QAAAABJRU5ErkJggg==");
@@ -95,12 +100,38 @@ h2 + p, p + p {
 	margin-top: 1em;
 }
 
+:any-link {
+	/** on désire que les liens héritent de la couleur du texte */
+	color: inherit;
+}
+
 .marge {
 	/** classe utilisée pour créer une marge */
 	width: 80%;
 	max-width: 1200px;
 	margin: 0 auto;
 	contain: paint;
+}
+
+
+
+/* =================================================================
+*  ============== Optimisation de l'accessibilité ==================
+*  ================================================================= */
+
+body > a:first-of-type {
+	/** le lien pour sauter au contenu principal */
+	position: absolute;
+	background: rgb(var(--couleur-primaire) / 1);
+	padding: 1em;
+	margin: 1em;
+	transform: translateY(-100vw);
+}
+
+body > a:first-of-type:focus, body > a:first-of-type:active {
+	/** le lien pour sauter au contenu principal */
+	transform: translateY(0);
+	z-index: 99999;
 }
 
 
@@ -217,10 +248,6 @@ body > footer {
 body > footer .marge {
 	display: flex;
 	justify-content: space-between;
-}
-
-body > footer a {
-	color: var(--texte-pied-page);
 }
 
 body > footer a:hover {

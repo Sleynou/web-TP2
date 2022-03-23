@@ -29,6 +29,8 @@
 		<script async defer src="js/test-serveur-http.js"></script>
 	</head>
 	<body>
+		<!-- WCAG 2.1: il faut un lien pour sauter au contenu [a11y] -->
+		<a href="#contenu-principal">Sauter vers le contenu principal</a>
 		<header>
 			<div class="marge flex">
 				<a href="#/" class="logo" title="Retourner à l'accueil">
@@ -61,7 +63,7 @@
 					<h1 aria-hidden="true">&nbsp;</h1>
 				</div>
 			</header>
-			<div class="marge corps">
+			<div class="marge corps" id="contenu-principal">
 				<p role="status">Chargement... Veuillez patienter.</p>
 			</div>
 			<!-- le vrai contenu des pages se trouve dans le dossier pages/ -->

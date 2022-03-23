@@ -69,7 +69,8 @@ export default class Page {
 		const titre = html.querySelector("h1").innerText.trim();
 		const description = html.querySelector("meta-description")?.innerText.trim();
 		const corps = html.querySelector("template").content;
-		const styleDePage = html.querySelector("style");
+		const styleDePage = html.querySelectorAll("style");
+		const scriptDePage = html.querySelectorAll("script");
 
 		/*
 			Le corps de la page est contenu dans un ShadowRoot. Or, le contenu d'un ShadowRoot
@@ -82,7 +83,12 @@ export default class Page {
 
 		// si la page comporte un style CSS spécifique, on vient l'intégrer au ShadowRoot:
 		if (styleDePage) {
-			corps.prepend(styleDePage);
+			corps.prepend(...styleDePage);
+		}
+
+		// si la page comporte un script spécifique, on vient l'intégrer au ShadowRoot:
+		if (scriptDePage) {
+			corps.append(...scriptDePage);
 		}
 
 		return new this(site, { titre, corps, identifiant, description });
