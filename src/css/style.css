@@ -27,9 +27,10 @@
 	--couleur-secondaire: 185 209 203;
 	--couleur-tertiaire: 209 201 185;
 
-	--police-titres: "Merriweather Sans", "sans-serif"; /** la police à utiliser pour les titres */
+	--police-titres: "Nunito", "sans-serif"; /** la police à utiliser pour les titres */
 	--epaisseur-titres: normal; /** l'épaisseur de la police des titres */
 	--epaisseur-titres-gras: bolder; /** l'épaisseur des titres qui doivent être en gras */
+	--empattement-titres: .08ex; /** l'espace entre les lettres des titres */
 	--police-texte: "Atkinson Hyperlegible", "sans-serif"; /** la police à utiliser pour tous les autres textes */
 
 	--interligne: 1.15; /** espacement des lignes de texte */
@@ -91,6 +92,7 @@ h1, h2, h3, h4, h5, h6, header, thead, th {
 	/** police des titres */
 	font-family: var(--police-titres);
 	font-weight: var(--epaisseur-titres);
+	letter-spacing: var(--empattement-titres);
 }
 
 h2, h3, h4, h5, h6 {
@@ -151,7 +153,7 @@ body > a:first-of-type:focus, body > a:first-of-type:active {
 body > header {
 	/** contient l'arrière-plan du bandeau */
 	background: var(--couleur-en-tete);
-	padding-top: 1em;
+	padding: 2rem 0 1.1rem 0;
 }
 
 body > header > .flex {
@@ -167,6 +169,13 @@ body > header > .flex > .logo {
 	align-items: center;
 	gap: 8px;
 	text-decoration: none;
+}
+
+body > header > .flex > .logo > h1 {
+	/** le logotype de l'entreprise */
+	font-size: 2.3em;
+	margin: 0;
+	line-height: .8em;
 	color: var(--texte-en-tete);
 }
 
@@ -225,8 +234,7 @@ body > main > header {
 }
 
 body > main > header h1 {
-	font-size: 2.4em;
-	line-height: 1.6em;
+	font-size: 2.8em;
 }
 
 body > main > .corps {
