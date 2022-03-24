@@ -95,7 +95,7 @@ h1, h2, h3, h4, h5, h6, header, thead, th {
 	letter-spacing: var(--empattement-titres);
 }
 
-h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6, th {
 	/** titres qui doivent être gras */
 	font-weight: var(--epaisseur-titres-gras);
 }
@@ -212,6 +212,7 @@ body > header nav > .menu a {
 	display: inline-block;
 	padding: 8px;
 	color: var(--texte-menu);
+	font-size: 1.1em;
 }
 
 
