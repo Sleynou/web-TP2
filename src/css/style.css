@@ -27,7 +27,9 @@
 	--couleur-secondaire: 185 209 203;
 	--couleur-tertiaire: 209 201 185;
 
-	--police-titres: "Comfortaa", "sans-serif"; /** la police à utiliser pour les titres */
+	--police-titres: "Merriweather Sans", "sans-serif"; /** la police à utiliser pour les titres */
+	--epaisseur-titres: normal; /** l'épaisseur de la police des titres */
+	--epaisseur-titres-gras: bolder; /** l'épaisseur des titres qui doivent être en gras */
 	--police-texte: "Atkinson Hyperlegible", "sans-serif"; /** la police à utiliser pour tous les autres textes */
 
 	--interligne: 1.15; /** espacement des lignes de texte */
@@ -88,6 +90,12 @@ strong {
 h1, h2, h3, h4, h5, h6, header, thead, th {
 	/** police des titres */
 	font-family: var(--police-titres);
+	font-weight: var(--epaisseur-titres);
+}
+
+h2, h3, h4, h5, h6 {
+	/** titres qui doivent être gras */
+	font-weight: var(--epaisseur-titres-gras);
 }
 
 h1, h2, h3, h4, h4, h6 {
