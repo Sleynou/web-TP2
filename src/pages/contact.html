@@ -2,63 +2,60 @@
 <meta-description>Description de la page</meta-description>
 
 <style>
-	/* Reseter */
-	button,
-	input,
-	optgroup,
-	select,
-	textarea {
-		line-height: inherit;
-		border: 1px solid currentColor;
+	img {
+		width: 80px;
+		border-radius: 33.33%;
 	}
 
-	button {
-	overflow: visible;
-	text-transform: none;
+	.flex {
+		display: flex;
+		justify-content: space-around;
+		padding-bottom: 2em;
 	}
 
-	button,
-	[type=button],
-	[type=reset],
-	[type=submit] {
-		-webkit-appearance: button;
-		padding: 1px 6px;
+	a:hover {
+		font-weight: bold;
 	}
-
-	input {
-		overflow: visible;
-	}
-
-	input,
-	textarea {
-		padding: 1px;
-	}
-
-	fieldset {
-		border: 1px solid currentColor;
-		margin: 0 2px;
-	}
-
-	legend {
-		color: inherit;
-		display: table;
-		max-width: 100%;
-		white-space: normal;
-	}
-
-	select {
-		text-transform: none;
-	}
-
-	textarea {
-		overflow: auto;
-		vertical-align: top;
-	}
-
-	/* style CSS de la page de contact */
 </style>
 
 <template>
-	<p>Contenu de la page de contact</p>
-	<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta eos quos dolores voluptatibus enim. Rem, quis omnis illum ducimus numquam fuga impedit laudantium in odit assumenda suscipit quidem excepturi nobis, veniam ex aperiam minus delectus, quos aut nemo optio placeat corrupti. Unde suscipit ullam provident!</p>
+	<div class="flex">
+		<section>
+			<img src="images/callicon.png" alt="callicon">
+			<h3><strong>Par téléphone</strong></h3>
+			<p>
+				<adress>
+					<a href="tel:+15819781234">(581) 978-1234</a>
+				</adress>
+			</p>
+		</section>
+		<section>
+			<img src="images/Facebook.png" alt="Facebookicon">
+			</img>
+			<h3>
+				<strong>Facebook</strong>
+			</h3>
+			<p>
+				<adress>
+					<a href=https://www.facebook.com/CegepGarneau>Facebook.com/Cam&Ra</a>
+				</adress>
+			</p>
+		</section>
+		<section>
+			<img src="images/mail.png" alt="Facebookicon">
+			</img>
+			<h3>
+				<strong>Par courriel</strong>
+			</h3>
+			<p>
+				<adress>
+					<a href="mailto:Cam&Ra@gmail.com">Cam&Ra@gmail.com</a>
+				</adress>
+			</p>
+		</section>
+	</div>
+	<iframe
+		src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2731.540989013586!2d-71.26499798417117!3d46.79364837913913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb896ec160e138b%3A0x49457c1ca2c4a492!2sC%C3%A9gep%20Garneau!5e0!3m2!1sfr!2sca!4v1647994133798!5m2!1sfr!2sca"
+		width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
 </template>

@@ -1,11 +1,139 @@
 <h1>Services offerts</h1>
 <meta-description>Description de la page</meta-description>
-
 <style>
-	/* style CSS de la page des services */
+	section {
+		width: 33.33%;
+		background: white;
+		border: 1px solid black;
+
+	}
+
+	p {
+		text-align: center;
+	}
+
+	img {
+		height: 250px;
+		width: 100%;
+		border-bottom: 1px solid black;
+
+	}
+
+	.flex {
+		display: flex;
+		gap: 60px;
+	}
+
+	section div {
+		padding: 20px;
+	}
+
+	a.bouton {
+		text-decoration: none;
+		display: inline-block;
+		margin: 20px 8px 0 8px;
+		padding: 8px;
+		background: rgb(var(--couleur-primaire));
+		color: var(--couleur-noir);
+		border-radius: 5px;
+	}
+
+	a.bouton:hover {
+		background: rgb(var(--couleur-tertiaire));
+	}
 </style>
 
+
+
+
+
 <template>
-	<p>Contenu de la page des services</p>
-	<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem sed repudiandae ipsam veniam ipsum qui nulla corrupti ex quae animi!</p>
+	<div class="flex">
+		<section>
+			<img src="images/idphoto.png" alt="idphoto">
+			<div>
+				<h3>Service A</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati et sit suscipit facilis maxime
+					tempora sunt quas quia ipsam dicta adipisci eos nam possimus, ut deleniti asperiores magni
+					voluptatem. Fugit.</p>
+				<a class="bouton" href="#">Plus de détails</a>
+
+
+			</div>
+
+		</section>
+		<section>
+			<img class="image" src="images/photoevenement.png" alt="idphoto">
+			<div>
+				<h3>Service B</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas vero eligendi nemo fugiat consequuntur
+					corrupti recusandae, explicabo placeat quo? Aliquam rem nobis vero aliquid possimus, beatae
+					quibusdam! Voluptatibus, amet tempore?</p>
+				<a class="bouton" href="#">Plus de détails</a>
+			</div>
+
+		</section>
+		<section>
+			<img id="image" src="images/photocom.png" alt="idphoto">
+			<div>
+				<h3>Service C</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam iste sequi optio, suscipit
+					reiciendis ducimus cum nulla excepturi nostrum est maiores dicta incidunt ullam, vel recusandae
+					vitae modi, odio voluptatum.</p>
+				<a class="bouton" href="#">Plus de détails</a>
+			</div>
+
+		</section>
+
+	</div>
+	<!--
+	<main>
+		<section>
+			<div class="container">
+				<div class="colonne">
+					<div class="Services">
+						<img  src="images/idphoto.png" alt="idphoto">
+						<h3>Service A</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, cumque autem a nesciunt
+							nulla aut
+							numquam eum aliquid placeat, corrupti impedit temporibus amet ut molestiae iusto, suscipit
+							eligendi
+							odit. Placeat!</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="container">
+				<div class="colonne">
+					<div class="Services">
+						<img class="image" src="images/photoevenement.png" alt="idphoto">
+						<h3>Service B</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, cumque autem a nesciunt
+							nulla aut
+							numquam eum aliquid placeat, corrupti impedit temporibus amet ut molestiae iusto, suscipit
+							eligendi
+							odit. Placeat!</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="container">
+				<div class="colonne">
+					<div class="Services">
+						<img id="image" src="images/photocom.png" alt="idphoto">
+						<h2>Service C</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, cumque autem a nesciunt
+							nulla aut
+							numquam eum aliquid placeat, corrupti impedit temporibus amet ut molestiae iusto, suscipit
+							eligendi
+							odit. Placeat!</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+	</main>-->
 </template>
